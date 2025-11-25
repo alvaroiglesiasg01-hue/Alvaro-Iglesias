@@ -10,9 +10,7 @@ class TiendaService:
         self.productos: Dict[str, Producto] = {}
         self.pedidos: List[Pedido] = []
 
-    # -------------------------
     # Usuarios
-    # -------------------------
     def registrar_usuario(self, tipo: str, nombre: str, email: str, direccion: str = "") -> Usuario:
         if tipo == "cliente":
             usuario = Cliente(nombre, email, direccion)
@@ -23,9 +21,7 @@ class TiendaService:
         self.usuarios[usuario.id] = usuario
         return usuario
 
-    # -------------------------
     # Productos
-    # -------------------------
     def agregar_producto(self, producto: Producto) -> None:
         self.productos[producto.id] = producto
 
@@ -36,9 +32,7 @@ class TiendaService:
     def listar_productos(self) -> List[Producto]:
         return list(self.productos.values())
 
-    # -------------------------
     # Pedidos
-    # -------------------------
     def realizar_pedido(self, cliente_id: str, items: Dict[str, int]) -> Pedido:
         if cliente_id not in self.usuarios or not isinstance(self.usuarios[cliente_id], Cliente):
             raise ValueError("Cliente no válido")

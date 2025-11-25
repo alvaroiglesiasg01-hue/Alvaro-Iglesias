@@ -9,10 +9,10 @@ class Producto:
         self.precio = precio
         self.stock = stock
 
-    def hay_stock(self, cantidad: int) -> bool: # Verifica si hay suficiente stock
+    def hay_stock(self, cantidad: int) -> bool: # Verifica stock
         return self.stock >= cantidad 
 
-    def actualizar_stock(self, cantidad: int) -> None:  # Actualiza el stock 
+    def actualizar_stock(self, cantidad: int) -> None:  # Actualizar el stock 
         self.stock += cantidad
 
     def __str__(self) -> str:
